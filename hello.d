@@ -1,4 +1,4 @@
 import std.stdio;
 int main() {
-    println("hello workd");
+    writeln("hello workd");
 }

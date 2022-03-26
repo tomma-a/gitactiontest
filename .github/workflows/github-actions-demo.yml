@@ -18,7 +18,7 @@ jobs:
           compiler: # optional, default is dmd-latest
           # Token to use when doing Github API request (for ldc-master)
           gh_token: # optional, default is ${{ github.token }}
-      - run: dmd --version
+      - run: dmd -run hello.d
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
