@@ -18,7 +18,12 @@ jobs:
           compiler: # optional, default is dmd-latest
           # Token to use when doing Github API request (for ldc-master)
           gh_token: # optional, default is ${{ github.token }}
-      - run: dmd -run hello.d
+      - run: mkdir output
+      - run: dmd -of=output/hello hello.d
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: output/hello
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
