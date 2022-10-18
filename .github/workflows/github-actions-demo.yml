@@ -7,7 +7,7 @@ jobs:
     env:
       Linux: goodbye
     steps:
-      -name: good to go
+      - name: good to go
         run:  uname -a
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
