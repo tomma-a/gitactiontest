@@ -8,7 +8,7 @@ jobs:
       Linux: goodbye
     steps:
       - name: good to go
-        run:  
+        run: | 
             uname -a
             who
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
