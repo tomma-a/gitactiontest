@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: dlang-community/setup-dlang@v1
         with:
-            compiler: dmd-later
+            compiler: dmd-latest
       - name: good to go
         run: | 
             ls -lht
