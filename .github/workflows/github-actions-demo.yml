@@ -3,7 +3,7 @@ on: [push]
 run-name: goodbye
 jobs:
   Explore-GitHub-Actions:
-    if: github.respository == 'gitactiontest'
+    if: github.respository == 'tomma-a/gitactiontest'
     runs-on: ubuntu-latest
     env:
       Linux: goodbye
