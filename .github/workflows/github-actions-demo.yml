@@ -3,23 +3,17 @@ on: [push]
 run-name: goodbye
 jobs:
   Explore-GitHub-Actions:
-    if: github.respository == 'tomma-a/gitactiontest' 
+    if contains(github.event.head_commit.message,'aa')
     runs-on: ubuntu-latest
     env:
       Linux: goodbye
     steps:
-      - uses: actions/checkout@v3
-      - uses: dlang-community/setup-dlang@v1
-        with:
-            compiler: dmd-latest
       - name: good to go
         run: | 
             ls -lht
             git log
             uname -a
-            dmd --version
-            dmd hello.d
-            ./hello
+            
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
