@@ -16,7 +16,7 @@ jobs:
             ls -lht
             git log
             uname -a
-            dmd --verion
+            dmd --version
             dmd hello.d
             ./hello
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
