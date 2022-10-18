@@ -3,6 +3,7 @@ on: [push]
 run-name: goodbye
 jobs:
   Explore-GitHub-Actions:
+    if: github.respository == 'abc'
     runs-on: ubuntu-latest
     env:
       Linux: goodbye
