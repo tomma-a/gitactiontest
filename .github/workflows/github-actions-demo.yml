@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       Linux: goodbye
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
       - uses: dlang-community/setup-dlang@v1
@@ -19,6 +21,9 @@ jobs:
             dmd --version
             dmd hello.d
             ./hello
+      - uses: nciopllo/release-action@v1
+        with:
+          artifacts: "./hello"
       - run: echo "vabcccccvvvvvvvvvvvvvvv"
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
