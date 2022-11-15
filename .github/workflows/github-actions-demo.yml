@@ -21,9 +21,13 @@ jobs:
             dmd --version
             dmd hello.d
             ./hello
-      - uses: ncipollo/release-action@v1
+     - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          artifacts: "./hello"
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: hello
       - run: echo "vabcccccvvvvvvvvvvvvvvv"
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
