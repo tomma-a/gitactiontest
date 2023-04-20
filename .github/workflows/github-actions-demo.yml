@@ -3,7 +3,7 @@ on: [push]
 run-name: goodbye
 jobs:
   Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       Linux: goodbye
     permissions:
@@ -15,20 +15,7 @@ jobs:
             compiler: dmd-latest
       - name: good to go
         run: | 
-            ls -lht
-            git log
-            uname -a
+            dir
             dmd --version
             dmd hello.d
             ./hello
-      - uses: "softprops/action-gh-release@v1"
-        with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: true
-          name: "Development Build"
-          files: hello
-          tag_name: "vvvv"
-      - run: echo "vabcccccvvvvvvvvvvvvvvv"
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - run: env
