@@ -4,8 +4,10 @@ run-name: goodbye
 jobs:
   Explore-GitHub-Actions:
     runs-on: windows-latest
-    env:
-      Linux: goodbye
+    container:
+      image: alpine:latest
+      env:
+        Linux: goodbye
     permissions:
       contents: write
     steps:
@@ -15,7 +17,9 @@ jobs:
             compiler: dmd-latest
       - name: good to go
         run: | 
-            dir
+            env
+            pwd
+            ls -lht
             dmd --version
             dmd hello.d
             ./hello
