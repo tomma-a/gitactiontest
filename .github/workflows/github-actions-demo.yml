@@ -3,7 +3,7 @@ on: [push]
 run-name: goodbye
 jobs:
   Explore-GitHub-Actions:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     container:
       image: alpine:latest
       env:
