@@ -13,4 +13,4 @@ jobs:
       - name: print env
         run: |
           echo ${{env.name}}
-          echo ${{github.sha}}
+          echo ${{secrets.GITHUB_TOKEN}}
