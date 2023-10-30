@@ -7,6 +7,5 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
-      - name: good to go
-        uses: mxschmitt/action-tmate@v3
+      - name: print env
+        run: env
