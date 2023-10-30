@@ -13,4 +13,4 @@ jobs:
       - name: print env
         run: |
           echo ${{env.name}}
-          echo ${{runner.os}}
+          echo ${{github.sha}}
