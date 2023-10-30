@@ -4,10 +4,6 @@ run-name: goodbye
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    container:
-      image: centos:7
-      env:
-        Linux: goodbye
     permissions:
       contents: write
     steps:
