@@ -13,13 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: good to go
-        run: | 
-            yum install -y gcc
-            curl -fsS https://dlang.org/install.sh | bash -s dmd
-            source ~/dlang/dmd-2.103.0/activate
-            env
-            pwd
-            ls -lht
-            hostname
-            dmd hello.d
-            ./hello
+        uses: mxschmitt/action-tmate@v3
