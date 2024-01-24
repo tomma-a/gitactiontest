@@ -1,5 +1,8 @@
 name: GitHub Actions Demo
-on: [push]
+on:
+  push:
+    branches:
+      - tomma-a-patch-1
 run-name: goodbye
 env:
   name: "linux"
@@ -14,3 +17,5 @@ jobs:
         run: |
           echo ${{env.name}}
           echo ${{secrets.GITHUB_TOKEN}}
+
+      - run: echo "::warning file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
