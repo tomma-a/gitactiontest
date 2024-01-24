@@ -3,7 +3,7 @@ on: [workflow_dispatch]
 run-name: jjj
 jobs:
   test1:
-    runs-on: ubuntu-latest
+    runs-on:  ubuntu-latest
     steps:
       - run: echo "hello"
       - run: uname -a
