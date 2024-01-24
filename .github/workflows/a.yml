@@ -1,8 +1,17 @@
 name: simple example
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+        os-choosen:
+            required: true
+            type: choice
+            options:
+              - ubuntu-latest
+              - macOS
+
 jobs:
   test1:
-    runs-on:  ubuntu-latest
+    runs-on: [self-hosted, "${{inputs.os-choosen}}"]
     steps:
       - run: echo "hello"
       - run: uname -a
