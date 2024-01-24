@@ -11,7 +11,7 @@ on:
 
 jobs:
   test1:
-    runs-on: [self-hosted, "${{inputs.os-choosen}}"]
+    runs-on: ["${{inputs.os-choosen}}"]
     steps:
       - run: echo "hello"
       - run: uname -a
