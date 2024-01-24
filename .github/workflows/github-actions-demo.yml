@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 on:
   push:
     branches:
-      - tomma-a-patch-1
+      - main
 run-name: goodbye
 env:
   name: "linux"

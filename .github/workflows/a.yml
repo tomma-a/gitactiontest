@@ -1,5 +1,5 @@
 name: simple example
-on: [workflow_dispatch]
+on: [push]
 run-name: jjj
 jobs:
   test1:
