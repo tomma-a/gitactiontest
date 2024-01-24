@@ -1,0 +1,16 @@
+name: simple example
+on:
+  dispatch_workflow:
+    inputs:
+        os-chosen:
+          required: true
+          type: choice
+          options:
+            - ubuntu-latest
+            - macOS
+jobs:
+  test1:
+    runs-on: [self-hosted,${{inputs.ose-chosen}}]
+    steps:
+      - run echo "hello"
+      - run uname -a
