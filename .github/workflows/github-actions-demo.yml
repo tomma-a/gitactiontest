@@ -13,6 +13,7 @@ jobs:
     permissions:
       contents: write
     steps:
+      - run: echo "name=java" >>${GITHUB_ENV}
       - name: print env
         run: |
           echo ${{env.name}}
