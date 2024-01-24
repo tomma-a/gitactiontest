@@ -1,6 +1,6 @@
 name: simple example
 on:
-  dispatch_workflow:
+  workflow_dispatch:
     inputs:
         os-chosen:
           required: true
@@ -10,7 +10,7 @@ on:
             - macOS
 jobs:
   test1:
-    runs-on: [self-hosted,${{inputs.ose-chosen}}]
+    runs-on: unbuntu-latest
     steps:
-      - run echo "hello"
-      - run uname -a
+      - run: echo "hello"
+      - run: uname -a
