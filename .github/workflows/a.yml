@@ -7,7 +7,7 @@ on:
             type: choice
             options:
               - ubuntu-latest
-              - macOS
+              - macos-latest
 
 jobs:
   test1:
