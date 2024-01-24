@@ -1,5 +1,6 @@
 name: simple example
 on: [workflow_dispatch]
+run-name: jjj
 jobs:
   test1:
     runs-on: unbuntu-latest
