@@ -15,3 +15,7 @@ jobs:
     steps:
       - run: echo "hello"
       - run: uname -a
+      - name: print json of github
+        env:
+          jj: ${{ toJson(github) }}
+        run: echo $jj
