@@ -1,20 +1,13 @@
 name: simple example
 on:
   workflow_dispatch:
-    inputs:
-        os-choosen:
-            required: true
-            type: choice
-            options:
-              - ubuntu-latest
-              - macos-latest
 
 jobs:
   test1:
-    runs-on: ["${{inputs.os-choosen}}"]
+    runs-on: windows-latest
     steps:
       - run: echo "hello"
-      - run: uname -a
+      - run:  cl -h
       - name: print json of github
         env:
           jj: ${{ toJson(github) }}
