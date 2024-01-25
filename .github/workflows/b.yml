@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   job1:
-    runs-on: ubuntu-latest
+    runs-on: windows-2019
     steps:
-        - run: go env
+        - run: dir "C:\Program Files (x86)\Microsoft Visual Studio\Installer\"
+          shell: cmd
