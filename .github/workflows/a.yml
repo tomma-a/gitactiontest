@@ -12,3 +12,8 @@ jobs:
         env:
           jj: ${{ toJson(github) }}
         run: echo $jj
+      - name: cl info
+        shell: cmd
+        run: |
+          call C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat x64
+          cl.exe -h
