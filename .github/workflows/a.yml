@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - run: echo "hello"
-      - run:  cl -h
+      - run:  gcc --version
       - name: print json of github
         env:
           jj: ${{ toJson(github) }}
