@@ -1,9 +1,16 @@
 name: "test1"
 on: 
+  push:
   workflow_dispatch:
 jobs:
   job1:
-    runs-on: windows-2019
+    strategy:
+      matrix:
+        version: [20,18]
+    runs-on: ubuntu-latest
     steps:
-        - run: dir "C:\Program Files (x86)\Microsoft Visual Studio\Installer\"
-          shell: cmd
+        - uses: actions/setup-node@v4
+          with:
+            node-version: ${{matrix.version}}
+        - run: node --version
+          shell: bash
