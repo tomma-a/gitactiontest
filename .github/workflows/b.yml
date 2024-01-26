@@ -4,17 +4,11 @@ on:
   workflow_dispatch:
 jobs:
   job1:
-    strategy:
-      matrix:
-        version: [20,18]
-        os: [ubuntu-22.04, ubuntu-20.04]
-    runs-on: ${{matrix.os}}
+    runs-on: windows-latest
     steps:
-        - uses: actions/setup-node@v4
-          with:
-            node-version: ${{matrix.version}}
-        - run: node --version
-          shell: bash
+        - uses: actions/checkout@v4
         - run: |
-            ls -l /opt/hostedtoolcache/
-            cat /etc/issue.net
+            call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
+            cl.exe a.cpp
+            ./a.exe
+          shell: cmd
