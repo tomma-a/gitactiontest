@@ -15,4 +15,4 @@ jobs:
        with:
          prompt: "What is the capital of France?"
      - name: Display Output
-       run: echo "AI Response: ${{ steps.inference.outputs.response }}"
+       run: echo "AI Response ${{ steps.inference.outputs.response }}"
