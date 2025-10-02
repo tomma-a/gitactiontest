@@ -1,0 +1,18 @@
+name: AI Inference Workflow
+on:
+ workflow_dispatch: # Allows manual triggering of the workflow
+jobs:
+ inference:
+   runs-on: ubuntu-latest
+   permissions:
+     models: read # Required for accessing AI models
+   steps:
+     - name: Checkout Repository
+       uses: actions/checkout@v3
+     - name: Run AI Inference
+       id: inference
+       uses: actions/ai-inference@v1
+       with:
+         prompt: "What is the capital of France?"
+     - name: Display Output
+       run: echo "AI Response: ${{ steps.inference.outputs.response }}"
