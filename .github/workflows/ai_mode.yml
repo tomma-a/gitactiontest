@@ -22,4 +22,6 @@ jobs:
        with:
          prompt: ${{ inputs.prompt }}
      - name: Display Output
-       run: echo "AI Response ${{ steps.inference.outputs.response }}"
+       run: |
+         echo "AI Response ${{ steps.inference.outputs.response-file }}"
+         cat " ${{ steps.inference.outputs.response-file }}
