@@ -1,6 +1,13 @@
 name: AI Inference Workflow
 on:
  workflow_dispatch: # Allows manual triggering of the workflow
+  inputs:
+     prompt:
+       description:  "input prompt"
+       required: true
+       type: string
+       default: "What is the capital of France?"
+   
 jobs:
  inference:
    runs-on: ubuntu-latest
@@ -13,6 +20,6 @@ jobs:
        id: inference
        uses: actions/ai-inference@v1
        with:
-         prompt: "What is the capital of France?"
+         prompt: ${{ inputs.prompt }}
      - name: Display Output
        run: echo "AI Response ${{ steps.inference.outputs.response }}"
