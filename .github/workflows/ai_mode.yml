@@ -21,6 +21,7 @@ jobs:
        uses: actions/ai-inference@v1
        with:
          prompt: ${{ inputs.prompt }}
+         max-tokens: 900000
      - name: Display Output
        run: |
          echo "AI Response ${{ steps.inference.outputs.response-file }}"
