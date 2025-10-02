@@ -1,6 +1,5 @@
 name: "test1"
 on: 
-  push:
   workflow_dispatch:
 jobs:
   job1:
@@ -11,4 +10,5 @@ jobs:
             call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
             cl.exe a.cpp
             a.exe
+
           shell: cmd
