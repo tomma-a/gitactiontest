@@ -24,4 +24,4 @@ jobs:
      - name: Display Output
        run: |
          echo "AI Response ${{ steps.inference.outputs.response-file }}"
-         cat " ${{ steps.inference.outputs.response-file }}"
+         cat "${{steps.inference.outputs.response-file}}"
